@@ -7,9 +7,9 @@ const bookList = require('./booklist-routes');
 router.use('/users', userRoutes);
 
 // route /api/books
-//router.use('/books', bookRoutes);
+router.use('/books', bookRoutes);
 
 // route /api/lists
-//router.use('/lists', bookList);
+router.use('/lists', bookList);
 
 module.exports = router;
