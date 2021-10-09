@@ -4,12 +4,12 @@ const bookRoutes = require('./book-routes');
 const bookList = require('./booklist-routes');
 
 // route /api/users
-router.route('/users', userRoutes);
+router.use('/users', userRoutes);
 
 // route /api/books
-router.route('/books', bookRoutes);
+//router.use('/books', bookRoutes);
 
 // route /api/lists
-router.route('/lists', bookList);
+//router.use('/lists', bookList);
 
 module.exports = router;

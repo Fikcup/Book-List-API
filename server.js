@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }));
-//app.use(routes);
+app.use(routes);
 
 // Once connected to the database, launches the server
 connection.connect(error => {
