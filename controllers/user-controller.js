@@ -29,11 +29,20 @@ const userController = {
             }
         )
     },
-    // createUser(req, res) {
-    //     connection.query(
-    //         `INSERT INTO users (id, username, userPassword, firstName, lastName) VALUES (${req.body})`
-    //     )
-    // }
+    createUser(req, res) {
+        connection.query(
+            `INSERT INTO users (username, userPassword, firstName, lastName) VALUES (${JSON.stringify(req.body.username)}, ${JSON.stringify(req.body.userPassword)}, ${JSON.stringify(req.body.firstName)}, ${JSON.stringify(req.body.lastName)})`,
+            (err, req) => {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                    return;
+                }
+
+                res.json(req);
+            }
+        )
+    }
 }
 
 module.exports = userController;
