@@ -9,6 +9,6 @@ const {
 router.route('/').get(getAllUsers).post(createUser);
 
 // route /api/users/:username
-router.route('/:username').get(getOneUser);
+router.route('/:userId').get(getOneUser);
 
 module.exports = router;

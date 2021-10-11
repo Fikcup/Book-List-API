@@ -17,7 +17,7 @@ const userController = {
     },
     getOneUser(req, res) {
         connection.query(
-            `SELECT id, username, firstName, lastName FROM users WHERE username = ${JSON.stringify(req.body.username)}`,
+            `SELECT * FROM users WHERE id= ${req.params.userId}`,
             (err, req) => {
                 if (err) {
                     console.log(err);
@@ -28,7 +28,12 @@ const userController = {
                 res.json(req);
             }
         )
-    }
+    },
+    // createUser(req, res) {
+    //     connection.query(
+    //         `INSERT INTO users (id, username, userPassword, firstName, lastName) VALUES (${req.body})`
+    //     )
+    // }
 }
 
 module.exports = userController;
