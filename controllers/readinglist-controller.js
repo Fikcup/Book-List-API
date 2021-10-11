@@ -1,8 +1,8 @@
 const connection = require('../db/config/connection');
 
-const bookListController = {
+const readingListController = {
     // Get all reading lists
-    getAllBooklists(req, res) {
+    getAllReadingLists(req, res) {
         connection.query(
             `SELECT * FROM readinglist`,
             (err, req) => {
@@ -17,7 +17,7 @@ const bookListController = {
         );
     },
     // Get one reading list by id
-    getOneBooklist(req, res) {
+    getOneReadingList(req, res) {
         connection.query(
             `SELECT * FROM readinglist WHERE id= ${req.params.listId}`,
             (err, req) => {
@@ -32,7 +32,7 @@ const bookListController = {
         );
     },
     // Create reading list
-    createBooklist(req, res) {
+    createReadingList(req, res) {
         connection.query(
             `INSERT INTO readinglist 
                 (listname, user, book) 
@@ -53,7 +53,7 @@ const bookListController = {
         );
     },
     // Update reading list
-    updateBooklist(req, res) {
+    updateReadingList(req, res) {
         connection.query(
             `UPDATE readinglist 
             SET 
@@ -74,7 +74,7 @@ const bookListController = {
         );
     },
     // Delete reading list
-    deleteBooklist(req, res) {
+    deleteReadingList(req, res) {
         connection.query(
             `DELETE from readinglist WHERE id = ${req.params.listId}`,
             (err, req) => {
@@ -90,4 +90,4 @@ const bookListController = {
     }
 }
 
-module.exports = bookListController;
+module.exports = readingListController;

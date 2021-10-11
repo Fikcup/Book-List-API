@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const userRoutes = require('./user-routes');
 const bookRoutes = require('./book-routes');
-const bookList = require('./booklist-routes');
+const readingList = require('./readinglist-routes');
 
 // route /api/users
 router.use('/users', userRoutes);
@@ -10,6 +10,6 @@ router.use('/users', userRoutes);
 router.use('/books', bookRoutes);
 
 // route /api/lists
-router.use('/lists', bookList);
+router.use('/lists', readingList);
 
 module.exports = router;
