@@ -48,6 +48,25 @@ const bookController = {
             }
         );
     },
+    updateBook(req, res) {
+        connection.query(
+            `UPDATE books
+            SET
+                title = ${JSON.stringify(req.body.title)},
+                author = ${JSON.stringify(req.body.author)}
+            WHERE
+                id = ${req.params.bookId}`,
+            (err, req) => {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                    return;
+                }
+
+                res.json(req);
+            }
+        );
+    }
 }
 
 module.exports = bookController;
