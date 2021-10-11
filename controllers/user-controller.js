@@ -14,7 +14,7 @@ const userController = {
 
                 res.json(req);
             }
-        )
+        );
     },
     // Get one user by id
     getOneUser(req, res) {
@@ -29,7 +29,7 @@ const userController = {
 
                 res.json(req);
             }
-        )
+        );
     },
     // Create a new user
     createUser(req, res) {
@@ -44,7 +44,7 @@ const userController = {
 
                 res.json(req);
             }
-        )
+        );
     },
     // Update a user
     updateUser(req, res) {
@@ -59,7 +59,7 @@ const userController = {
 
                 res.json(req);
             }
-        )
+        );
     },
     // Delete a user
     deleteUser(req, res) {
@@ -74,7 +74,7 @@ const userController = {
 
                 res.json(req);
             }
-        )
+        );
     }
 }
 
