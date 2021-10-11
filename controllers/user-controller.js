@@ -17,7 +17,7 @@ const userController = {
     },
     getOneUser(req, res) {
         connection.query(
-            `SELECT * FROM users WHERE id= ${req.params.userId}`,
+            `SELECT * FROM users WHERE id = ${req.params.userId}`,
             (err, req) => {
                 if (err) {
                     console.log(err);
@@ -43,9 +43,9 @@ const userController = {
             }
         )
     },
-    deleteUser(req, res) {
+    updateUser(req, res) {
         connection.query(
-            `DELETE from users WHERE id= ${req.params.userId}`,
+            `UPDATE users SET username = ${JSON.stringify(req.body.username)}, userPassword = ${JSON.stringify(req.body.userPassword)}, firstName = ${JSON.stringify(req.body.firstName)}, lastName = ${JSON.stringify(req.body.lastName)} WHERE id = ${req.params.userId}`,
             (err, req) => {
                 if (err) {
                     console.log(err);
@@ -54,9 +54,23 @@ const userController = {
                 }
 
                 res.json(req);
-        }
+            }
         )
     },
+    deleteUser(req, res) {
+        connection.query(
+            `DELETE from users WHERE id = ${req.params.userId}`,
+            (err, req) => {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                    return;
+                }
+
+                res.json(req);
+            }
+        )
+    }
 }
 
 module.exports = userController;
