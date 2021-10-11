@@ -66,7 +66,21 @@ const bookController = {
                 res.json(req);
             }
         );
-    }
+    },
+    deleteBook(req, res) {
+        connection.query(
+            `DELETE FROM books WHERE id = ${req.params.bookId}`,
+            (err, req) => {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                    return;
+                }
+
+                res.json(req);
+            }
+        );
+    },
 }
 
 module.exports = bookController;
