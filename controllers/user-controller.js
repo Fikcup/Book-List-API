@@ -42,7 +42,21 @@ const userController = {
                 res.json(req);
             }
         )
-    }
+    },
+    deleteUser(req, res) {
+        connection.query(
+            `DELETE from users WHERE id= ${req.params.userId}`,
+            (err, req) => {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                    return;
+                }
+
+                res.json(req);
+        }
+        )
+    },
 }
 
 module.exports = userController;
