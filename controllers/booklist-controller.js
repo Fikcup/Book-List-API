@@ -57,6 +57,20 @@ const bookListController = {
             }
         );
     },
+    deleteBooklist(req, res) {
+        connection.query(
+            `DELETE from readinglist WHERE id = ${req.params.listId}`,
+            (err, req) => {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                    return;
+                }
+
+                res.json(req);
+            }
+        );
+    }
 }
 
 module.exports = bookListController;
