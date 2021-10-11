@@ -13,7 +13,7 @@ const bookListController = {
 
                 res.json(req);
             }
-        )
+        );
     },
     getOneBooklist(req, res) {
         connection.query(
@@ -27,8 +27,22 @@ const bookListController = {
 
                 res.json(req);
             }
-        )
-    }
+        );
+    },
+    createBooklist(req, res) {
+        connection.query(
+            `INSERT INTO readinglist (listname, user, book) VALUES (${JSON.stringify(req.body.listname)}, ${JSON.stringify(req.body.user)}, ${JSON.stringify(req.body.book)})`,
+            (err, req) => {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                    return;
+                }
+
+                res.json(req);
+            }
+        );
+    },
 }
 
 module.exports = bookListController;
