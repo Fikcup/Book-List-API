@@ -40,7 +40,8 @@ const userController = {
                 ${JSON.stringify(req.body.username)}, 
                 ${JSON.stringify(req.body.userPassword)}, 
                 ${JSON.stringify(req.body.firstName)}, 
-                ${JSON.stringify(req.body.lastName)})`,
+                ${JSON.stringify(req.body.lastName)}
+            )`,
             (err, req) => {
                 if (err) {
                     console.log(err);

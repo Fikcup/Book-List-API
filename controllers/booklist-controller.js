@@ -34,7 +34,13 @@ const bookListController = {
     // Create reading list
     createBooklist(req, res) {
         connection.query(
-            `INSERT INTO readinglist (listname, user, book) VALUES (${JSON.stringify(req.body.listname)}, ${JSON.stringify(req.body.user)}, ${JSON.stringify(req.body.book)})`,
+            `INSERT INTO readinglist 
+                (listname, user, book) 
+            VALUES (
+                ${JSON.stringify(req.body.listname)},
+                ${JSON.stringify(req.body.user)},
+                ${JSON.stringify(req.body.book)}
+            )`,
             (err, req) => {
                 if (err) {
                     console.log(err);
@@ -49,7 +55,13 @@ const bookListController = {
     // Update reading list
     updateBooklist(req, res) {
         connection.query(
-            `UPDATE readinglist SET listname = ${JSON.stringify(req.body.listName)}, user = ${JSON.stringify(req.body.user)}, book = ${JSON.stringify(req.body.book)}`,
+            `UPDATE readinglist 
+            SET 
+                listname = ${JSON.stringify(req.body.listName)}, 
+                user = ${JSON.stringify(req.body.user)}, 
+                book = ${JSON.stringify(req.body.book)}
+            WHERE
+                id = ${req.params.listId}`,
             (err, req) => {
                 if (err) {
                     console.log(err);
