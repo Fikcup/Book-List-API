@@ -13,7 +13,7 @@ const bookController = {
 
                 res.json(req);
             }
-        )
+        );
     },
     getOneBook(req, res) {
         connection.query(
@@ -27,8 +27,27 @@ const bookController = {
 
                 res.json(req);
             }
-        )
-    }
+        );
+    },
+    createBook(req, res) {
+        connection.query(
+            `INSERT INTO books
+                (title, author)
+            VALUES (
+                    ${JSON.stringify(req.body.title)},
+                    ${JSON.stringify(req.body.author)}
+                )`,
+            (err, req) => {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                    return;
+                }
+
+                res.json(req);
+            }
+        );
+    },
 }
 
 module.exports = bookController;
