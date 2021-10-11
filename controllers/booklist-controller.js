@@ -43,6 +43,20 @@ const bookListController = {
             }
         );
     },
+    updateBooklist(req, res) {
+        connection.query(
+            `UPDATE readinglist SET listname = ${JSON.stringify(req.body.listName)}, user = ${JSON.stringify(req.body.user)}, book = ${JSON.stringify(req.body.book)}`,
+            (err, req) => {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                    return;
+                }
+
+                res.json(req);
+            }
+        );
+    },
 }
 
 module.exports = bookListController;
