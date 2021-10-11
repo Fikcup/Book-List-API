@@ -34,7 +34,13 @@ const userController = {
     // Create a new user
     createUser(req, res) {
         connection.query(
-            `INSERT INTO users (username, userPassword, firstName, lastName) VALUES (${JSON.stringify(req.body.username)}, ${JSON.stringify(req.body.userPassword)}, ${JSON.stringify(req.body.firstName)}, ${JSON.stringify(req.body.lastName)})`,
+            `INSERT INTO users 
+                (username, userPassword, firstName, lastName) 
+            VALUES (
+                ${JSON.stringify(req.body.username)}, 
+                ${JSON.stringify(req.body.userPassword)}, 
+                ${JSON.stringify(req.body.firstName)}, 
+                ${JSON.stringify(req.body.lastName)})`,
             (err, req) => {
                 if (err) {
                     console.log(err);
@@ -49,7 +55,14 @@ const userController = {
     // Update a user
     updateUser(req, res) {
         connection.query(
-            `UPDATE users SET username = ${JSON.stringify(req.body.username)}, userPassword = ${JSON.stringify(req.body.userPassword)}, firstName = ${JSON.stringify(req.body.firstName)}, lastName = ${JSON.stringify(req.body.lastName)} WHERE id = ${req.params.userId}`,
+            `UPDATE users 
+            SET 
+                username = ${JSON.stringify(req.body.username)}, 
+                userPassword = ${JSON.stringify(req.body.userPassword)},
+                firstName = ${JSON.stringify(req.body.firstName)}, 
+                lastName = ${JSON.stringify(req.body.lastName)} 
+            WHERE 
+                id = ${req.params.userId}`,
             (err, req) => {
                 if (err) {
                     console.log(err);
