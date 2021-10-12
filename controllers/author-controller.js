@@ -48,6 +48,25 @@ const authorController = {
             }
         );
     },
+    updateAuthor(req, res) {
+        connection.query(
+            `UPDATE authors
+            SET
+                firstName = ${JSON.stringify(req.body.firstName)},
+                lastName = ${JSON.stringify(req.body.lastName)}
+            WHERE
+                id = ${req.params.authorId}`,
+            (err, req) => {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                    return;
+                }
+
+                res.json(req);
+            }
+        );
+    },
 }
 
 module.exports = authorController;
