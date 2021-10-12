@@ -1,6 +1,7 @@
 const connection = require('../db/config/connection');
 
 const authorController = {
+    // Users can request a list of authors
     getAllAuthors(req, res) {
         connection.query(
             `SELECT * FROM authors`,
@@ -15,6 +16,7 @@ const authorController = {
             }
         );
     },
+    // Users can search for an author
     getOneAuthor(req, res) {
         connection.query(
             `SELECT * FROM authors where id = ${req.params.authorId}`,
@@ -29,6 +31,7 @@ const authorController = {
             }
         );
     },
+    // Admin users can add authors to the database
     createAuthor(req, res) {
         connection.query(
             `INSERT INTO authors
@@ -48,6 +51,7 @@ const authorController = {
             }
         );
     },
+    // Admin users can update author name in the event of an error
     updateAuthor(req, res) {
         connection.query(
             `UPDATE authors
@@ -67,6 +71,7 @@ const authorController = {
             }
         );
     },
+    // Admin users can remove authors from the database
     deleteAuthor(req, res) {
         connection.query(
             `DELETE FROM authors WHERE id = ${req.params.authorId}`,

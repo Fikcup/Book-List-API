@@ -1,7 +1,7 @@
 const connection = require('../db/config/connection');
 
 const readingListController = {
-    // Get all reading lists
+    // Users can view all reading lists that have been created by other users
     getAllReadingLists(req, res) {
         connection.query(
             `SELECT * FROM readinglist`,
@@ -16,7 +16,7 @@ const readingListController = {
             }
         );
     },
-    // Get one reading list by id
+    // Users can search for a reading list created by another user
     getOneReadingList(req, res) {
         connection.query(
             `SELECT * FROM readinglist WHERE id= ${req.params.listId}`,
@@ -31,7 +31,7 @@ const readingListController = {
             }
         );
     },
-    // Create reading list
+    // Users can create a reading list and add books to it
     createReadingList(req, res) {
         connection.query(
             `INSERT INTO readinglist 
@@ -52,7 +52,7 @@ const readingListController = {
             }
         );
     },
-    // Update reading list
+    // Users can update their own reading lists
     updateReadingList(req, res) {
         connection.query(
             `UPDATE readinglist 
@@ -73,7 +73,7 @@ const readingListController = {
             }
         );
     },
-    // Delete reading list
+    // Users can delete their own reading lists
     deleteReadingList(req, res) {
         connection.query(
             `DELETE from readinglist WHERE id = ${req.params.listId}`,

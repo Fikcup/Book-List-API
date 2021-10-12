@@ -1,7 +1,7 @@
 const connection = require('../db/config/connection');
 
 const userController = {
-    // Get all users
+    // Users can find a list of users
     getAllUsers(req, res) {
         connection.query(
             `SELECT id, username, firstName, lastName FROM users`,
@@ -16,7 +16,7 @@ const userController = {
             }
         );
     },
-    // Get one user by id
+    // Admin users can view a user's account info
     getOneUser(req, res) {
         connection.query(
             `SELECT * FROM users WHERE id = ${req.params.userId}`,
@@ -31,7 +31,7 @@ const userController = {
             }
         );
     },
-    // Create a new user
+    // Users can create an account
     createUser(req, res) {
         connection.query(
             `INSERT INTO users 
@@ -53,7 +53,7 @@ const userController = {
             }
         );
     },
-    // Update a user
+    // Users can update their own accounts
     updateUser(req, res) {
         connection.query(
             `UPDATE users 
@@ -75,7 +75,7 @@ const userController = {
             }
         );
     },
-    // Delete a user
+    // Users can delete their own accounts
     deleteUser(req, res) {
         connection.query(
             `DELETE from users WHERE id = ${req.params.userId}`,

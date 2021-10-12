@@ -1,6 +1,7 @@
 const connection = require('../db/config/connection');
 
 const bookAuthorController = {
+    // Users can view all book information in the database
     getAllBookInfo(req, res) {
         connection.query(
             `SELECT * FROM bookandauthor`,
@@ -15,6 +16,7 @@ const bookAuthorController = {
             }
         );
     },
+    // Users can search and find one book's information
     getOneBookInfo(req, res) {
         connection.query(
             `SELECT * FROM bookandauthor WHERE id = ${req.params.bookinfoId}`,
@@ -29,6 +31,7 @@ const bookAuthorController = {
             }
         );
     },
+    // Admin users can add book info
     createBookInfo(req, res) {
         connection.query(
             `INSERT INTO bookandauthor
@@ -48,6 +51,7 @@ const bookAuthorController = {
             }
         );
     },
+    // Admin users can update book info
     updateBookInfo(req, res) {
         connection.query(
             `UPDATE bookandauthor
@@ -67,6 +71,7 @@ const bookAuthorController = {
             }
         );
     },
+    // Admin users can delete book info
     deleteBookInfo(req, res) {
         connection.query(
             `DELETE from bookandauthor WHERE id = ${req.params.bookinfoId}`,

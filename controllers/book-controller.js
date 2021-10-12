@@ -1,7 +1,7 @@
 const connection = require('../db/config/connection');
 
 const bookController = {
-    // Get all books
+    // Users can view all books in the database
     getAllBooks(req, res) {
         connection.query(
             `SELECT * FROM books`,
@@ -16,7 +16,7 @@ const bookController = {
             }
         );
     },
-    // Get one book by id
+    // Users can search for one book
     getOneBook(req, res) {
         connection.query(
             `SELECT * FROM books WHERE id = ${req.params.bookId}`,
@@ -31,7 +31,7 @@ const bookController = {
             }
         );
     },
-    // Create a book
+    // Admin users can add a book title to the database
     createBook(req, res) {
         connection.query(
             `INSERT INTO books
@@ -50,7 +50,7 @@ const bookController = {
             }
         );
     },
-    // Update a book
+    // Admin users can update book titles
     updateBook(req, res) {
         connection.query(
             `UPDATE books
@@ -69,7 +69,7 @@ const bookController = {
             }
         );
     },
-    // Delete a book
+    // Admin users can delete a book title from the database
     deleteBook(req, res) {
         connection.query(
             `DELETE FROM books WHERE id = ${req.params.bookId}`,
