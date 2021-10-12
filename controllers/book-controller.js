@@ -19,7 +19,7 @@ const bookController = {
     // Get one book by id
     getOneBook(req, res) {
         connection.query(
-            `SELECT * FROM books WHERE id= ${req.params.bookId}`,
+            `SELECT * FROM books WHERE id = ${req.params.bookId}`,
             (err, req) => {
                 if (err) {
                     console.log(err);
