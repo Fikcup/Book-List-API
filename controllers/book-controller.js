@@ -37,8 +37,8 @@ const bookController = {
             `INSERT INTO books
                 (title)
             VALUES (
-                    ${JSON.stringify(req.body.title)},
-                )`,
+                    ${JSON.stringify(req.body.title)}
+            )`,
             (err, req) => {
                 if (err) {
                     console.log(err);
