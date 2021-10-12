@@ -38,6 +38,7 @@ VALUES
 
 -- READING LIST SEEDS --
 INSERT INTO 
-    readinglist(listName, user, book)
+    readinglist(listName, user, bookId)
 VALUES
-    ("Reading List", "JackieReads", "The Lightning Thief");
+    ("Reading List", "JackieReads", "1"),
+    ("Reading List", "JackieReads", "2");

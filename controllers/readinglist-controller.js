@@ -35,11 +35,11 @@ const readingListController = {
     createReadingList(req, res) {
         connection.query(
             `INSERT INTO readinglist 
-                (listname, user, book) 
+                (listname, user, bookId) 
             VALUES (
                 ${JSON.stringify(req.body.listname)},
                 ${JSON.stringify(req.body.user)},
-                ${JSON.stringify(req.body.book)}
+                ${JSON.stringify(req.body.bookId)}
             )`,
             (err, req) => {
                 if (err) {
@@ -59,7 +59,7 @@ const readingListController = {
             SET 
                 listname = ${JSON.stringify(req.body.listName)}, 
                 user = ${JSON.stringify(req.body.user)}, 
-                book = ${JSON.stringify(req.body.book)}
+                bookId = ${JSON.stringify(req.body.bookId)}
             WHERE
                 id = ${req.params.listId}`,
             (err, req) => {

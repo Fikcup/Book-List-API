@@ -25,6 +25,9 @@ CREATE TABLE readinglist (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     listName VARCHAR(30) NOT NULL,
     user VARCHAR(25) NOT NULL,
-    book VARCHAR(50) NOT NULL,
-    FOREIGN KEY (user) REFERENCES users(username)
+    bookId INT NOT NULL,
+    FOREIGN KEY (user) REFERENCES users(username),
+    FOREIGN KEY (bookId) REFERENCES books(id)
 );
+
+-- Look into edge cases for username changes. Potentially swap to user ID --
