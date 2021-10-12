@@ -29,6 +29,25 @@ const bookAuthorController = {
             }
         );
     },
+    createBookInfo(req, res) {
+        connection.query(
+            `INSERT INTO bookandauthor
+                (bookId, authorId)
+            VALUES (
+                ${req.body.bookId},
+                ${req.body.authorId}
+            )`,
+            (err, req) => {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                    return;
+                }
+
+                res.json(req);
+            }
+        );
+    },
 }
 
 module.exports = bookAuthorController;
