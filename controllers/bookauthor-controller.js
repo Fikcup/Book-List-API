@@ -67,6 +67,20 @@ const bookAuthorController = {
             }
         );
     },
+    deleteBookInfo(req, res) {
+        connection.query(
+            `DELETE from bookandauthor WHERE id = ${req.params.bookinfoId}`,
+            (err, req) => {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                    return;
+                }
+
+                res.json(req);
+            }
+        );
+    },
 }
 
 module.exports = bookAuthorController;
