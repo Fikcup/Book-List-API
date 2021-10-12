@@ -28,7 +28,26 @@ const authorController = {
                 res.json(req);
             }
         );
-    }
+    },
+    createAuthor(req, res) {
+        connection.query(
+            `INSERT INTO authors
+                (firstName, lastName)
+            VALUES (
+                ${JSON.stringify(req.body.firstName)},
+                ${JSON.stringify(req.body.lastName)}
+            )`,
+            (err, req) => {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                    return;
+                }
+
+                res.json(req);
+            }
+        );
+    },
 }
 
 module.exports = authorController;
