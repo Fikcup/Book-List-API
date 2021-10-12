@@ -67,6 +67,20 @@ const authorController = {
             }
         );
     },
+    deleteAuthor(req, res) {
+        connection.query(
+            `DELETE FROM authors WHERE id = ${req.params.authorId}`,
+            (err, req) => {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                    return;
+                }
+
+                res.json(req);
+            }
+        );
+    },
 }
 
 module.exports = authorController;
