@@ -48,6 +48,25 @@ const bookAuthorController = {
             }
         );
     },
+    updateBookInfo(req, res) {
+        connection.query(
+            `UPDATE bookandauthor
+            SET
+                bookId = ${req.body.bookId},
+                authorId = ${req.body.authorId}
+            WHERE
+                id = ${req.params.bookinfoId}`,
+            (err, req) => {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                    return;
+                }
+
+                res.json(req);
+            }
+        );
+    },
 }
 
 module.exports = bookAuthorController;
