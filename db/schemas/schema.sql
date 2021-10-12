@@ -27,7 +27,7 @@ CREATE TABLE authors (
 );
 
 -- BOOKS AND AUTHORS TABLE --
-CREATE TABLE bookAndAuthor (
+CREATE TABLE bookandauthor (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     bookId INT NOT NULL,
     authorId INT NOT NULL,
