@@ -13,15 +13,6 @@ CREATE TABLE users (
     lastName VARCHAR(50)
 );
 
--- BOOKS AND AUTHORS TABLE --
-CREATE TABLE bookAndAuthor (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    bookId INT NOT NULL,
-    authorId INT NOT NULL,
-    FOREIGN KEY (bookId) REFERENCES books(id),
-    FOREIGN KEY (authorId) REFERENCES authors(id)
-);
-
 -- BOOKS TABLE --
 CREATE TABLE books (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -33,6 +24,15 @@ CREATE TABLE authors (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     firstName VARCHAR(50) NOT NULL,
     lastName VARCHAR(50) NOT NULL
+);
+
+-- BOOKS AND AUTHORS TABLE --
+CREATE TABLE bookAndAuthor (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    bookId INT NOT NULL,
+    authorId INT NOT NULL,
+    FOREIGN KEY (bookId) REFERENCES books(id),
+    FOREIGN KEY (authorId) REFERENCES authors(id)
 );
 
 -- LISTS TABLE --
