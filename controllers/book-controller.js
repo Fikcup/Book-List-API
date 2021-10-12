@@ -35,10 +35,9 @@ const bookController = {
     createBook(req, res) {
         connection.query(
             `INSERT INTO books
-                (title, author)
+                (title)
             VALUES (
                     ${JSON.stringify(req.body.title)},
-                    ${JSON.stringify(req.body.author)}
                 )`,
             (err, req) => {
                 if (err) {
@@ -57,7 +56,6 @@ const bookController = {
             `UPDATE books
             SET
                 title = ${JSON.stringify(req.body.title)},
-                author = ${JSON.stringify(req.body.author)}
             WHERE
                 id = ${req.params.bookId}`,
             (err, req) => {

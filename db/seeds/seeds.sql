@@ -6,35 +6,94 @@ INSERT INTO
 VALUES
     ("JackieReads", "b00kw0rm#3", "Jackie", "LeBlanc");
 
+-- BOOKS AND AUTHORS --
+INSERT INTO 
+    bookAndAuthor(bookId, authorId)
+VALUES
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5),
+    (6, 6),
+    (7, 7),
+    (8, 8),
+    (9, 9),
+    (10, 10),
+    (11, 11),
+    (12, 12),
+    (13, 13),
+    (14, 14),
+    (15, 15),
+    (16, 16),
+    (17, 17),
+    (18, 18),
+    (19, 19),
+    (20, 20),
+    (21, 21),
+    (22, 22),
+    (23, 23),
+    (24, 24);
+
 -- BOOK SEEDS --
 INSERT INTO 
-    books(title, author)
+    books(title)
 VALUES
-    ("The Hunger Games", "Suzanne Collins"),
-    ("Twilight", "Stephanie Meyer"),
-    ("The Book Thief", "Markus Zusak"),
-    ("To Kill a Mockingbird", "Harper Lee"),
-    ("The Chronicles of Narnia", "C.S. Lewis"),
-    ("Gone with the Wind", "Margaret Mitchell"),
-    ("The Giving Tree", "Shel Silverstein"),
-    ("The Picture of Dorian Gray", "Oscar Wilde"),
-    ("The Da Vinci Code", "Dan Brown"),
-    ("Alice's Adventures in Wonderland", "Lewis Carroll"),
-    ("Farenheit 451", "Ray Bradbury"),
-    ("The Perks of Being a Wallflower", "Stephen Chbosky"),
-    ("Divergent", "Veronica Roth"),
-    ("The Great Gatsby", "F. Scott Fitzgerald"),
-    ("Harry Potter and the Sorcerer's Stone", "J.K. Rowling"),
-    ("Lord of the Flies", "William Golding"),
-    ("Crime and Punishment", "Fyodor Dostoevsky"),
-    ("Romeo and Juliet", "William Shakespeare"),
-    ("City of Bones", "Cassandra Clare"),
-    ("Anne of Green Gables", "L.M. Montgomery"),
-    ("Ender's Game", "Orson Scott Card"),
-    ("Charlotte's Web", "E.B. White"),
-    ("The Lightning Thief", "Rick Riordan"),
-    ("The Storied Life of A.J. Fikry", "Gabrielle Zevin"),
-    ("The Catcher in the Rye", "J.D. Salinger");
+    ("The Hunger Games"),
+    ("Twilight"),
+    ("The Book Thief"),
+    ("To Kill a Mockingbird"),
+    ("The Chronicles of Narnia"),
+    ("Gone with the Wind"),
+    ("The Giving Tree"),
+    ("The Picture of Dorian Gray"),
+    ("The Da Vinci Code"),
+    ("Alice's Adventures in Wonderland"),
+    ("Farenheit 451"),
+    ("The Perks of Being a Wallflower"),
+    ("Divergent"),
+    ("The Great Gatsby"),
+    ("Harry Potter and the Sorcerer's Stone"),
+    ("Lord of the Flies"),
+    ("Crime and Punishment"),
+    ("Romeo and Juliet"),
+    ("City of Bones"),
+    ("Anne of Green Gables"),
+    ("Ender's Game"),
+    ("Charlotte's Web"),
+    ("The Lightning Thief"),
+    ("The Storied Life of A.J. Fikry"),
+    ("The Catcher in the Rye");
+
+-- AUTHORS SEEDS --
+INSERT INTO
+    authors(firstName, lastName)
+VALUES
+    ("Suzanne", "Collines"),
+    ("Stephanie", "Meyer"),
+    ("Markus", "Zusak"),
+    ("Harper", "Lee"),
+    ("C.S.", "Lewis"),
+    ("Margaret", "Mitchell"),
+    ("Shel", "Silverstein"),
+    ("Oscar", "Wilde"),
+    ("Dan", "Brown"),
+    ("Lewis", "Carroll"),
+    ("Ray", "Bradbury"),
+    ("Stephen", "Chbosky"),
+    ("Veronica", "Roth"),
+    ("F. Scott", "Fitzgerald"),
+    ("J.K.", "Rowling"),
+    ("William", "Golding"),
+    ("Fyodor", "Dostoevsky")
+    ("William", "Shakespeare"),
+    ("Cassandra", "Clare"),
+    ("L.M.", "Montgomery"),
+    ("Orson Scott", "Card"),
+    ("E.B.", "White"),
+    ("Rick", "Riordan"),
+    ("Gabrielle", "Zevin"),
+    ("J.D.", "Salinger");
 
 -- READING LIST SEEDS --
 INSERT INTO 
