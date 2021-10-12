@@ -14,6 +14,20 @@ const authorController = {
                 res.json(req);
             }
         );
+    },
+    getOneAuthor(req, res) {
+        connection.query(
+            `SELECT * FROM authors where id = ${req.params.authorId}`,
+            (err, req) => {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                    return;
+                }
+
+                res.json(req);
+            }
+        );
     }
 }
 
