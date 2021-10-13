@@ -38,7 +38,7 @@ CREATE TABLE bookandauthor (
 -- BOOK PRIORITY TABLE --
 CREATE TABLE bookpriority (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    priorityLevel VARCHAR(6) NOT NULL DEFAULT 'medium'
+    priorityLevel VARCHAR(6) NOT NULL
 );
 
 -- LISTS TABLE --
@@ -47,7 +47,7 @@ CREATE TABLE readinglist (
     listName VARCHAR(30) NOT NULL,
     userId INT NOT NULL,
     bookId INT NOT NULL,
-    priorityId INT,
+    priorityId INT DEFAULT 1,
     FOREIGN KEY (userId) REFERENCES users(id),
     FOREIGN KEY (bookId) REFERENCES books(id),
     FOREIGN KEY (priorityId) REFERENCES bookpriority(id)

@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const {
-    addPriority,
     updatePriority,
 } = require('../../controllers/priority-controller');
 const {
@@ -18,6 +17,6 @@ router.route('/').get(getAllReadingLists).post(createReadingList);
 router.route('/:listId').get(getOneReadingList).put(updateReadingList).delete(deleteReadingList);
 
 // route /api/lists/list:id/priority
-router.route('/:listId/priority').post(addPriority).put(updatePriority);
+router.route('/:listId/priority').put(updatePriority);
 
 module.exports = router;

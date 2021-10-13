@@ -6,6 +6,14 @@ INSERT INTO
 VALUES
     ("JackieReads", "b00kw0rm#3", "Jackie", "LeBlanc");
 
+-- PRIORITY SEEDS --
+INSERT INTO 
+    bookpriority(prioritylevel)
+VALUES
+    ('medium'),
+    ('low'),
+    ('high');
+
 -- BOOK SEEDS --
 INSERT INTO 
     books(title)
