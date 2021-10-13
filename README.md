@@ -6,4 +6,4 @@
 
 * Add an admin setting for users
 
-![Database EER Diagram](./assets/booklistEER.png)
+![Database EER Diagram](./assets/booklistEER.PNG)
