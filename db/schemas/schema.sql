@@ -9,6 +9,7 @@ CREATE TABLE users (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(25) NOT NULL UNIQUE,
     userPassword VARCHAR(75) NOT NULL,
+    admin BOOLEAN default 0,
     firstName VARCHAR(50) NOT NULL,
     lastName VARCHAR(50)
 );

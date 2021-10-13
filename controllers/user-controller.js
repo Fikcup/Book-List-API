@@ -4,7 +4,7 @@ const userController = {
     // Users can find a list of users
     getAllUsers(req, res) {
         connection.query(
-            `SELECT id, username, firstName, lastName FROM users`,
+            `SELECT id, username, admin, firstName, lastName FROM users`,
             (err, req) => {
                 if (err) {
                     console.log(err);
