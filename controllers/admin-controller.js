@@ -1,6 +1,7 @@
 const connection = require('../db/config/connection');
 
 const adminController = {
+    // Admin users can grant admin access
     updateAdminAccess(req, res) {
         connection.query(
             `UPDATE users 

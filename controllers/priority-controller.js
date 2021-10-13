@@ -1,6 +1,7 @@
 const connection = require('../db/config/connection');
 
 const priorityController = {
+    // Users can give books on their reading list a priority value
     updatePriority(req, res) {
         connection.query(
             `UPDATE readinglist 
