@@ -5,3 +5,5 @@
 ## Next steps
 
 * Add an admin setting for users
+
+![Database EER Diagram](./assets/booklistEER.png)
