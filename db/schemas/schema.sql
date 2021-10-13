@@ -35,22 +35,20 @@ CREATE TABLE bookandauthor (
     FOREIGN KEY (authorId) REFERENCES authors(id)
 );
 
+-- BOOK PRIORITY TABLE --
+CREATE TABLE bookpriority (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    priorityLevel VARCHAR(6) NOT NULL DEFAULT 'medium'
+);
+
 -- LISTS TABLE --
 CREATE TABLE readinglist (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     listName VARCHAR(30) NOT NULL,
-    user VARCHAR(25) NOT NULL,
+    userId INT NOT NULL,
     bookId INT NOT NULL,
-    FOREIGN KEY (user) REFERENCES users(username),
-    FOREIGN KEY (bookId) REFERENCES books(id)
+    priorityId INT,
+    FOREIGN KEY (userId) REFERENCES users(id),
+    FOREIGN KEY (bookId) REFERENCES books(id),
+    FOREIGN KEY (priorityId) REFERENCES bookpriority(id)
 );
-
--- ADD PRIORITY to be implemented --
-
--- PRIORITY TABLE --
-CREATE TABLE priority (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    priority VARCHAR(6) NOT NULL DEFAULT 'medium'
-);
-
--- Look into edge cases for username changes. Potentially swap to user ID --
