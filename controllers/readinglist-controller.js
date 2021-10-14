@@ -48,7 +48,7 @@ const readingListController = {
                     return;
                 }
 
-                res.json(req);
+                res.json({ message: 'Reading list has been created!' });
             }
         );
     },
@@ -69,7 +69,7 @@ const readingListController = {
                     return;
                 }
 
-                res.json(req);
+                res.json({ message: 'Reading list has been updated!' });
             }
         );
     },
@@ -84,7 +84,7 @@ const readingListController = {
                     return;
                 }
 
-                res.json(req);
+                res.json({ message: 'Reading list has been deleted!' });
             }
         );
     }

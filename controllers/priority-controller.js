@@ -17,7 +17,7 @@ const priorityController = {
                     return;
                 }
 
-                res.json(req);
+                res.json({ message: 'Book priority has been updated!' });
             }
         );
     }

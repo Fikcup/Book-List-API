@@ -16,7 +16,7 @@ const adminController = {
                     return;
                 }
 
-                res.json(req);
+                res.json({ message: `User has been granted admin access!` });
             }
         );
     }

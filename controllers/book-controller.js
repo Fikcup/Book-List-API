@@ -46,7 +46,7 @@ const bookController = {
                     return;
                 }
 
-                res.json(req);
+                res.json({ message: 'Book has been added!' });
             }
         );
     },
@@ -65,7 +65,7 @@ const bookController = {
                     return;
                 }
 
-                res.json(req);
+                res.json({ message: 'Book title has been updated!' });
             }
         );
     },
@@ -80,7 +80,7 @@ const bookController = {
                     return;
                 }
 
-                res.json(req);
+                res.json({ message: 'Book has been deleted!' });
             }
         );
     },

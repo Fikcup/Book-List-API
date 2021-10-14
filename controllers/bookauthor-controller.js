@@ -47,7 +47,7 @@ const bookAuthorController = {
                     return;
                 }
 
-                res.json(req);
+                res.json({ message: 'Book info has been added!' });
             }
         );
     },
@@ -67,7 +67,7 @@ const bookAuthorController = {
                     return;
                 }
 
-                res.json(req);
+                res.json({ message: 'Book information has been updated!' });
             }
         );
     },
@@ -82,7 +82,7 @@ const bookAuthorController = {
                     return;
                 }
 
-                res.json(req);
+                res.json({ message: 'Book information has been deleted!' });
             }
         );
     },

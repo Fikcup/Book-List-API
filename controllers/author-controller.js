@@ -47,7 +47,7 @@ const authorController = {
                     return;
                 }
 
-                res.json(req);
+                res.json({ message: 'Author has been added!' });
             }
         );
     },
@@ -67,7 +67,7 @@ const authorController = {
                     return;
                 }
 
-                res.json(req);
+                res.json({ message: 'Author information has been updated!' });
             }
         );
     },
@@ -82,7 +82,7 @@ const authorController = {
                     return;
                 }
 
-                res.json(req);
+                res.json({ message: 'Author has been deleted!' });
             }
         );
     },

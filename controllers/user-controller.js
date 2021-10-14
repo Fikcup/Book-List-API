@@ -49,7 +49,7 @@ const userController = {
                     return;
                 }
 
-                res.json(req);
+                res.json({ message: 'User has been created!' });
             }
         );
     },
@@ -71,7 +71,7 @@ const userController = {
                     return;
                 }
 
-                res.json(req);
+                res.json({ message: 'User has been updated!' });
             }
         );
     },
@@ -86,7 +86,7 @@ const userController = {
                     return;
                 }
 
-                res.json(req);
+                res.json({message: 'User has been deleted!' });
             }
         );
     }
