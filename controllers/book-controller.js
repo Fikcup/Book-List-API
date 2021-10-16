@@ -55,7 +55,7 @@ const bookController = {
         connection.query(
             `UPDATE books
             SET
-                title = ${JSON.stringify(req.body.title)},
+                title = ${JSON.stringify(req.body.title)}
             WHERE
                 id = ${req.params.bookId}`,
             (err, req) => {
