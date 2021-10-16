@@ -15,7 +15,7 @@
 ## About The Project
 
 ![Reading List API Screenshot](./assets/readinglistAPI.PNG)
-Project Link: [Reading List API Walkthrough]()
+Project Link: [Reading List API Walkthrough](https://youtu.be/8ujjJ3qomds)
 
 ### Enhanced Entity Relationship Diagram
 
